@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HouseRules" load_steps=2 format=3 uid="uid://cxie3iy0eancn"]
+
+[ext_resource type="Script" path="res://data_classes/house_rules.gd" id="1_8scxc"]
+
+[resource]
+script = ExtResource("1_8scxc")
+grocery_shopping = false
+check_in = false
+write_journal = false
+curfew = 0.0
