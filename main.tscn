@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc2r8s5woxqbw"]
+[gd_scene load_steps=16 format=3 uid="uid://cc2r8s5woxqbw"]
 
 [ext_resource type="Texture2D" uid="uid://4nk0wlqci6cq" path="res://kenney_scribble-dungeons/Tilesheet/tilesheet.png" id="1_w7rj3"]
 [ext_resource type="PackedScene" uid="uid://dq557xhfi8vqh" path="res://core/patient/patient.tscn" id="2_c10yl"]
 [ext_resource type="PackedScene" uid="uid://dwj2m6kl8mip" path="res://user_interface/time_container.tscn" id="3_8jibn"]
 [ext_resource type="Script" path="res://user_interface/calendar.gd" id="4_8kar4"]
+[ext_resource type="Script" path="res://user_interface/patient_container.gd" id="5_l7rnv"]
+[ext_resource type="Texture2D" uid="uid://d0tu1nhnhf3bh" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/purple_character.png" id="5_wmtu2"]
+[ext_resource type="Script" path="res://core/patient/patient_manager.gd" id="9_pq4gi"]
 [ext_resource type="Script" path="res://core/interaction/interactable.gd" id="9_tmxpv"]
 [ext_resource type="Texture2D" uid="uid://cuotecpt76nmw" path="res://addons/godot_gameplay_systems/interactables/assets/InteractableArea2D.png" id="10_68q6p"]
 
@@ -663,6 +666,9 @@ layer_0/tile_data = PackedInt32Array(1245194, 1, 1, 1179658, 1, 1, 1114122, 1, 1
 
 [node name="Patient" parent="." instance=ExtResource("2_c10yl")]
 
+[node name="Patient2" parent="." instance=ExtResource("2_c10yl")]
+position = Vector2(1100, 488)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_4l8mu")
@@ -675,16 +681,15 @@ position = Vector2(560, 430)
 [node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("3_8jibn")]
 
 [node name="CalendarContainer" type="PanelContainer" parent="CanvasLayer" node_paths=PackedStringArray("activities", "temp_patient")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -151.0
-offset_right = 250.0
-offset_bottom = 149.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.889
+anchor_right = 0.056
+anchor_bottom = 0.889
+offset_left = -0.512002
+offset_top = -227.072
+offset_right = 484.488
+offset_bottom = 72.928
 grow_vertical = 2
 pivot_offset = Vector2(250, 150)
 script = ExtResource("4_8kar4")
@@ -698,6 +703,22 @@ layout_mode = 2
 layout_mode = 2
 text = "Seng"
 
+[node name="PatientContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_bottom = 0.891
+offset_right = 64.0
+offset_bottom = 0.631979
+grow_vertical = 2
+script = ExtResource("5_l7rnv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PatientContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/PatientContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_wmtu2")
+
 [node name="SomeActivity" type="Area2D" parent="." node_paths=PackedStringArray("patient")]
 position = Vector2(286, 216)
 script = ExtResource("9_tmxpv")
@@ -708,6 +729,10 @@ shape = SubResource("RectangleShape2D_13hpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="SomeActivity"]
 texture = ExtResource("10_68q6p")
+
+[node name="PatientManager" type="Node2D" parent="." node_paths=PackedStringArray("patients")]
+script = ExtResource("9_pq4gi")
+patients = [NodePath("../Patient"), NodePath("../Patient2")]
 
 [connection signal="button_up" from="CanvasLayer/CalendarContainer/GridContainer/Button" to="CanvasLayer/CalendarContainer" method="_on_button_button_up"]
 [connection signal="input_event" from="SomeActivity" to="SomeActivity" method="_on_input_event"]

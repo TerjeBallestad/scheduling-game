@@ -3,12 +3,10 @@ class_name Interactable extends Node2D
 signal on_interact(interactable: Interactable)
 @export var patient: Patient
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
