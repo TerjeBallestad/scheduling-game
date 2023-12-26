@@ -667,7 +667,7 @@ layer_0/tile_data = PackedInt32Array(1245194, 1, 1, 1179658, 1, 1, 1114122, 1, 1
 [node name="Patient" parent="." instance=ExtResource("2_c10yl")]
 
 [node name="Patient2" parent="." instance=ExtResource("2_c10yl")]
-position = Vector2(1100, 488)
+position = Vector2(769, 290)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
@@ -711,11 +711,14 @@ offset_bottom = 0.631979
 grow_vertical = 2
 script = ExtResource("5_l7rnv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PatientContainer"]
+[node name="VerticalContainer" type="VBoxContainer" parent="CanvasLayer/PatientContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/PatientContainer/VBoxContainer"]
+[node name="PatientButton" type="TextureButton" parent="CanvasLayer/PatientContainer/VerticalContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("5_wmtu2")
 
