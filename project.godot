@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TimeManager="*res://core/time_manager.gd"
 GameState="*res://core/game_state.gd"
+TimeManager="*res://core/time_keeping/time_manager.gd"
 
 [display]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfxf1gqm51iph"]
+
+[ext_resource type="Script" path="res://core/interaction/interactable.gd" id="1_5kjo8"]
+[ext_resource type="Texture2D" uid="uid://cuotecpt76nmw" path="res://addons/godot_gameplay_systems/interactables/assets/InteractableArea2D.png" id="2_br6gt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13hpy"]
+size = Vector2(81, 70)
+
+[node name="activity" type="Area2D"]
+script = ExtResource("1_5kjo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_13hpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_br6gt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

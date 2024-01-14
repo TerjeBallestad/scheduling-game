@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq557xhfi8vqh"]
+[gd_scene load_steps=6 format=3 uid="uid://dq557xhfi8vqh"]
 
 [ext_resource type="Script" path="res://core/patient/patient.gd" id="1_le6cd"]
+[ext_resource type="Texture2D" uid="uid://b6he73fagvxbd" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/red_character.png" id="2_amerv"]
 [ext_resource type="Texture2D" uid="uid://d0tu1nhnhf3bh" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/purple_character.png" id="2_mhayk"]
 [ext_resource type="Script" path="res://addons/godot_gameplay_systems/extended_character_nodes/nodes/2d/point_and_click_2d.gd" id="3_dutk4"]
 
@@ -9,10 +10,11 @@
 [node name="Patient" type="CharacterBody2D"]
 position = Vector2(550, 244)
 script = ExtResource("1_le6cd")
+texture = ExtResource("2_mhayk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_mhayk")
+texture = ExtResource("2_amerv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_u0omg")

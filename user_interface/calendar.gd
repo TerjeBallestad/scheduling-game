@@ -1,15 +1,21 @@
 class_name Calendar extends PanelContainer
 
-@export var activities: Array[Interactable]
-@export var temp_patient: Patient
+var activityButtons: Array[Button] = []
+@onready var buttonContainer: GridContainer = $GridContainer
 
-func schedule_activity():
+func _ready():
+	GameState.activityAdded.connect(_add_activity_button)
+
+func schedule_activity(activity: Interactable):
 	var date = DateTime.new().countdown(3)
-	date.date_target_reached.connect(on_patient_try_activity)
+	date.date_target_reached.connect(on_patient_try_activity.bind(activity))
 
-func on_patient_try_activity():
-	temp_patient.move_to_interactable(activities[0])
+func on_patient_try_activity(activity: Interactable):
+	if GameState.activePatient:
+		GameState.activePatient.move_to_interactable(activity)
 
-
-func _on_button_button_up():
-	schedule_activity()
+func _add_activity_button(activity: Interactable):
+	var button = Button.new()
+	buttonContainer.add_child(button)
+	button.text = activity.name
+	button.button_down.connect(schedule_activity.bind(activity))
