@@ -19,3 +19,4 @@ func _add_activity_button(activity: Interactable):
 	buttonContainer.add_child(button)
 	button.text = activity.name
 	button.button_down.connect(schedule_activity.bind(activity))
+	button.custom_minimum_size = Vector2(120, 200)
