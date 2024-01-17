@@ -1,5 +1,7 @@
 class_name Calendar extends Node
 
+signal slot_added(slot: DateTime)
+
 # The week divided up in 15 minute chunks
 var current_week : Array[DateTime] =  []
 var current_week_number := 0
@@ -11,6 +13,7 @@ func _init():
         date.update(0)
         date.add_minutes(s)
         current_week.push_front(date)
+        slot_added.emit(date)
         print("new date: %s" % date.formatted())
 
     print("init current week %d" % current_week_number)
