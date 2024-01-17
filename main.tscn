@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dq557xhfi8vqh" path="res://core/patient/patient.tscn" id="2_c10yl"]
 [ext_resource type="PackedScene" uid="uid://dwj2m6kl8mip" path="res://user_interface/time_container.tscn" id="3_8jibn"]
 [ext_resource type="Texture2D" uid="uid://bg37nj7etwa8j" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/green_character.png" id="3_u5spm"]
-[ext_resource type="Script" path="res://user_interface/calendar.gd" id="4_8kar4"]
+[ext_resource type="Script" path="res://user_interface/calendar_container.gd" id="4_8kar4"]
 [ext_resource type="Script" path="res://user_interface/patient_container.gd" id="5_l7rnv"]
 [ext_resource type="Texture2D" uid="uid://d0tu1nhnhf3bh" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/purple_character.png" id="5_wmtu2"]
 [ext_resource type="Theme" uid="uid://kwqv4s6sor58" path="res://user_interface/elling.tres" id="6_mvh7p"]
@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://calendar_day.gd" id="9_bsbu4"]
 [ext_resource type="Script" path="res://core/patient/patient_manager.gd" id="9_pq4gi"]
 [ext_resource type="Texture2D" uid="uid://c2d8ar1vogsgq" path="res://addons/godot_gameplay_systems/attributes_and_abilities/assets/Ability.svg" id="10_bbc8p"]
-[ext_resource type="Script" path="res://CalendarEvent.gd" id="11_momnm"]
+[ext_resource type="Script" path="res://calendar_event.gd" id="11_momnm"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oqv31"]
 tile_data = PackedInt32Array(0, 131073, 0, 1, 196609, 0, 2, 196609, 0, 3, 196609, 0)

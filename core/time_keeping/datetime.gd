@@ -8,23 +8,40 @@ enum Day {
 	friday,
 	saturday,
 	sunday
-	}
+}
 
 signal date_target_reached()
 
-var time: float
-var day: int = 0
-var hour: float = 0.0
-var minute: float = 0.0
 var game_time_factor : float = 60000
-var game_minutes : float
-var game_seconds : float
-var game_hours : float
-var game_days : float
-var seconds_second : float
-var seconds_minute: float
-var seconds_hour : float
-var seconds_day : float
+var time := 0.0
+var seconds_second : float # seconds in an in-game second
+var seconds_minute: float # seconds in an in-game minute
+var seconds_hour : float # seconds in an in-game hour
+var seconds_day : float # seconds in an in-game day
+
+var game_minutes : float :
+	get :
+		return time / seconds_minute
+
+var game_hours : float :
+	get :
+		return time / seconds_hour
+
+var game_days : float :
+	get :
+		return time / seconds_day
+
+var minute: float:
+	get :
+		return fmod(game_minutes, 60)
+
+var hour: float :
+	get :
+		return fmod(game_hours, 24)
+
+var day: int :
+	get :
+		return fmod(game_days, 7)
 
 func _init():
 	seconds_second = 60 / game_time_factor
@@ -39,12 +56,6 @@ func formatted():
 
 func update(_time: float):
 	time = _time
-	game_minutes = time / seconds_minute
-	game_hours = time / seconds_hour
-	game_days = time / seconds_day
-	hour = fmod(game_hours, 24)
-	minute = fmod(game_minutes, 60)
-	day = fmod(game_days, 7)
 
 func target_date(_day: Day, _hour: float, _minute: float):
 	var daysToAdd = _day - day

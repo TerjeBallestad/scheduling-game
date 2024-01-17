@@ -1,4 +1,4 @@
-class_name Calendar extends PanelContainer
+class_name CalendarContainer extends PanelContainer
 
 var activityButtons: Array[Button] = []
 @onready var buttonContainer: GridContainer = $GridContainer

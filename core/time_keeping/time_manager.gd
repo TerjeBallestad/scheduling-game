@@ -3,6 +3,7 @@ extends Node
 var game_time_factor : float = 500
 var time : float
 var datetime : DateTime
+var calendar : Calendar
 var timeFormatted : String
 var realTimeFormatted : String
 var previousTimeFormatted : String
@@ -14,6 +15,7 @@ signal update_time(day: String, timeFormatted: String)
 func _ready():
 	time += startTime
 	datetime = DateTime.new()
+	calendar = Calendar.new()
 	Engine.time_scale = 1
 	print("original time = %s %f" % [datetime.formatted(), time])
 	target_timestamp = DateTime.new().target_date(DateTime.Day.saturday, 2, 59)
