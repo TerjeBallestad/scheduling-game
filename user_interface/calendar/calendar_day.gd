@@ -6,15 +6,15 @@ func _init(_day: DateTime.Day):
 	day = _day
 
 func _ready():
-	size_flags_horizontal = Control.SIZE_EXPAND
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var label = Label.new()
 	add_child(label)
 	label.text = DateTime.Day.find_key(day)
-	for slot in 12:
+	for slot in 24:
 		var slotContainer = CalendarSlot.new()
-		slotContainer.text = str(slot + 1)
-		slotContainer.datetime = TimeManager.calendar.current_week[day * 96 + slot]
-		print("adding slot %s day: %d slot: %d" % [slotContainer.datetime.formatted(), day, slot])
+		slotContainer.datetime = TimeManager.calendar.current_week[day * 96 + slot * 4]
+		slotContainer.text = slotContainer.datetime.formatted
+		print("adding slot %s day: %d slot: %d" % [slotContainer.datetime.formatted, day, slot])
 		add_child(slotContainer)
 
 

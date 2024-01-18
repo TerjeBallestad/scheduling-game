@@ -12,22 +12,22 @@ enum Day {
 
 signal date_target_reached()
 
-var game_time_factor : float = 60000
+var game_time_factor: float = 60000
 var time := 0.0
-var seconds_second : float # seconds in an in-game second
+var seconds_second: float # seconds in an in-game second
 var seconds_minute: float # seconds in an in-game minute
-var seconds_hour : float # seconds in an in-game hour
-var seconds_day : float # seconds in an in-game day
+var seconds_hour: float # seconds in an in-game hour
+var seconds_day: float # seconds in an in-game day
 
-var game_minutes : float :
+var game_minutes: float :
 	get :
 		return time / seconds_minute
 
-var game_hours : float :
+var game_hours: float :
 	get :
 		return time / seconds_hour
 
-var game_days : float :
+var game_days: float :
 	get :
 		return time / seconds_day
 
@@ -43,16 +43,16 @@ var day: int :
 	get :
 		return fmod(game_days, 7)
 
+var formatted: String :
+	get:
+		return "%s %02d:%02d" % [Day.find_key(day), hour, minute]
+
 func _init():
 	seconds_second = 60 / game_time_factor
 	seconds_minute = seconds_second * 60
 	seconds_hour = seconds_minute * 60
 	seconds_day = seconds_hour * 24
 	update(TimeManager.time)
-
-
-func formatted():
-	return "%s %02d:%02d" % [Day.find_key(day), hour, minute]
 
 func update(_time: float):
 	time = _time
