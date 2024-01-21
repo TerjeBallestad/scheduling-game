@@ -47,12 +47,15 @@ var formatted: String :
 	get:
 		return "%s %02d:%02d" % [Day.find_key(day), hour, minute]
 
-func _init():
+func _init(_time: float = -1):
 	seconds_second = 60 / game_time_factor
 	seconds_minute = seconds_second * 60
 	seconds_hour = seconds_minute * 60
 	seconds_day = seconds_hour * 24
-	update(TimeManager.time)
+	if(_time == -1):
+		time = TimeManager.time
+	else:
+		time = _time
 
 func update(_time: float):
 	time = _time

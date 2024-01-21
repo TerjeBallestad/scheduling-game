@@ -1,4 +1,6 @@
-extends TextureRect
+class_name CalendarEvent extends TextureRect
+
+
 
 func _get_drag_data(_at_position: Vector2):
 	var preview_texture = TextureRect.new()
