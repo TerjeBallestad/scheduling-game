@@ -8,7 +8,7 @@ var text: String :
         label.text = value
 
 func _init():
-    expand_mode = TextureRect.EXPAND_FIT_HEIGHT
+    expand_mode = TextureRect.EXPAND_FIT_WIDTH
     stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
     label = Label.new()
     add_child(label)
@@ -17,7 +17,7 @@ func _init():
     panel.set_anchors_preset(Control.PRESET_FULL_RECT)
     panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
     add_child(panel)
-    custom_minimum_size.y = 20
+    custom_minimum_size.y = 28
 
 func _get_drag_data(_at_position: Vector2):
     var preview_texture = TextureRect.new()
@@ -41,4 +41,3 @@ func _can_drop_data(_pos: Vector2, data: Variant) -> bool:
 
 func _drop_data(_pos: Vector2, data: Variant):
     texture = data
-    custom_minimum_size = Vector2(0, 20)
