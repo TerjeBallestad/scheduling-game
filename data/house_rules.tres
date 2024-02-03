@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="HouseRules" load_steps=2 format=3 uid="uid://cxie3iy0eancn"]
 
-[ext_resource type="Script" path="res://data_classes/house_rules.gd" id="1_8scxc"]
+[ext_resource type="Script" path="res://data/01_models/house_rules.gd" id="1_8scxc"]
 
 [resource]
 script = ExtResource("1_8scxc")

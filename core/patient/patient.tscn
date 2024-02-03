@@ -1,22 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq557xhfi8vqh"]
+[gd_scene load_steps=8 format=3 uid="uid://dq557xhfi8vqh"]
 
 [ext_resource type="Script" path="res://core/patient/patient.gd" id="1_le6cd"]
+[ext_resource type="Resource" uid="uid://dgskgwjosjmlj" path="res://data/patients/robert.tres" id="2_65qno"]
 [ext_resource type="Texture2D" uid="uid://b6he73fagvxbd" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/red_character.png" id="2_amerv"]
 [ext_resource type="Texture2D" uid="uid://d0tu1nhnhf3bh" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/purple_character.png" id="2_mhayk"]
 [ext_resource type="Script" path="res://addons/godot_gameplay_systems/extended_character_nodes/nodes/2d/point_and_click_2d.gd" id="3_dutk4"]
+[ext_resource type="Material" uid="uid://t77qtycm7kwp" path="res://materials/outline_material.tres" id="4_u0nns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0omg"]
+radius = 22.0227
 
 [node name="Patient" type="CharacterBody2D"]
-position = Vector2(550, 244)
+input_pickable = true
+motion_mode = 1
 script = ExtResource("1_le6cd")
+patient = ExtResource("2_65qno")
 texture = ExtResource("2_mhayk")
+outline_material = ExtResource("4_u0nns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 texture = ExtResource("2_amerv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_u0omg")
 
 [node name="PointAndClick2D" type="Node2D" parent="."]
@@ -26,4 +33,6 @@ script = ExtResource("3_dutk4")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="PointAndClick2D"]
 unique_name_in_owner = true
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="navigation_finished" from="PointAndClick2D/NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]

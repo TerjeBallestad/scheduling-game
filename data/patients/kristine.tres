@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PatientResource" load_steps=5 format=3 uid="uid://dbj3mjjttglsy"]
+
+[ext_resource type="Script" path="res://data/01_models/patient_resource.gd" id="1_ev007"]
+[ext_resource type="Texture2D" uid="uid://b6he73fagvxbd" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/red_character.png" id="2_c33b7"]
+[ext_resource type="Script" path="res://data/01_models/stats.gd" id="2_m71ce"]
+
+[sub_resource type="Resource" id="Resource_n1hii"]
+script = ExtResource("2_m71ce")
+lol = 0.0
+
+[resource]
+script = ExtResource("1_ev007")
+texture = ExtResource("2_c33b7")
+name = "Kristine"
+stats = SubResource("Resource_n1hii")

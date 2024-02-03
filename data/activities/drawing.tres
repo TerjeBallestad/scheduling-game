@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ActivityResource" load_steps=3 format=3 uid="uid://csw5nfift7fsp"]
+
+[ext_resource type="Script" path="res://data/01_models/activity_resource.gd" id="1_yh78o"]
+[ext_resource type="Texture2D" uid="uid://8o4gb7ww7coc" path="res://kenney_scribble-dungeons/PNG/Default (64px)/trap.png" id="2_3b6n7"]
+
+[resource]
+script = ExtResource("1_yh78o")
+texture = ExtResource("2_3b6n7")
+name = "Drawing"

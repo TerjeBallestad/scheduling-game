@@ -1,12 +1,12 @@
-class_name CalendarContainer extends Panel
+class_name CalendarContainer extends PanelContainer
 
-var activityButtons: Array[Button] = []
-var dayContainers: Array[CalendarDay] = []
+@export var day_container_scene: PackedScene
 @onready var weekContainer: HBoxContainer = %WeekView
 @onready var activityPicker: VBoxContainer = %EventPicker
+var activityButtons: Array[Button] = []
+var dayContainers: Array[CalendarDay] = []
 
 func _ready():
-	init_week()
 	GameState.activityAdded.connect(_add_activity_button)
 
 func schedule_activity(activity: Interactable):
@@ -26,6 +26,15 @@ func _add_activity_button(activity: Interactable):
 
 func init_week() -> void :
 	for day in 7 :
-		var dayContainer = CalendarDay.new(day)
+		var dayContainer = day_container_scene.instantiate()
+		print(dayContainer.has_node('DayLabel'))
+		dayContainer.setup(day)
 		dayContainers.push_front(dayContainer)
 		weekContainer.add_child(dayContainer)
+
+func _on_close_button_pressed():
+	hide()
+
+func open():
+	show()
+	init_week()

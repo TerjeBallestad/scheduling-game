@@ -2,18 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://4nk0wlqci6cq" path="res://kenney_scribble-dungeons/Tilesheet/tilesheet.png" id="1_w7rj3"]
 [ext_resource type="PackedScene" uid="uid://dq557xhfi8vqh" path="res://core/patient/patient.tscn" id="2_c10yl"]
-[ext_resource type="PackedScene" uid="uid://dwj2m6kl8mip" path="res://user_interface/time_container.tscn" id="3_8jibn"]
+[ext_resource type="Resource" uid="uid://dgskgwjosjmlj" path="res://data/patients/robert.tres" id="3_4f03o"]
+[ext_resource type="PackedScene" uid="uid://dwj2m6kl8mip" path="res://user_interface/time_controls/time_container.tscn" id="3_8jibn"]
 [ext_resource type="Texture2D" uid="uid://bg37nj7etwa8j" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/green_character.png" id="3_u5spm"]
-[ext_resource type="Script" path="res://user_interface/calendar/calendar_container.gd" id="4_8kar4"]
-[ext_resource type="Script" path="res://user_interface/patient_container.gd" id="5_l7rnv"]
-[ext_resource type="Texture2D" uid="uid://d0tu1nhnhf3bh" path="res://kenney_scribble-dungeons/PNG/Default (64px)/Characters/purple_character.png" id="5_wmtu2"]
-[ext_resource type="Theme" uid="uid://kwqv4s6sor58" path="res://user_interface/elling.tres" id="6_mvh7p"]
+[ext_resource type="Resource" uid="uid://dbj3mjjttglsy" path="res://data/patients/kristine.tres" id="5_3fp2e"]
+[ext_resource type="Script" path="res://user_interface/UIRoot.gd" id="5_u6m05"]
+[ext_resource type="PackedScene" uid="uid://duguwpavxe46" path="res://user_interface/calendar/patient_container.tscn" id="7_k74a5"]
 [ext_resource type="PackedScene" uid="uid://bfxf1gqm51iph" path="res://core/interaction/activity.tscn" id="8_uhnny"]
-[ext_resource type="Texture2D" uid="uid://bgfn647m855hg" path="res://addons/godot_gameplay_systems/attributes_and_abilities/assets/GameplayEffect.svg" id="9_33wss"]
-[ext_resource type="Script" path="res://user_interface/calendar/calendar_day.gd" id="9_nfq2q"]
+[ext_resource type="PackedScene" uid="uid://pgsqqtug0tme" path="res://user_interface/calendar/calendar.tscn" id="9_nrke2"]
 [ext_resource type="Script" path="res://core/patient/patient_manager.gd" id="9_pq4gi"]
-[ext_resource type="Texture2D" uid="uid://c2d8ar1vogsgq" path="res://addons/godot_gameplay_systems/attributes_and_abilities/assets/Ability.svg" id="10_bbc8p"]
-[ext_resource type="Script" path="res://user_interface/calendar/calendar_event.gd" id="11_q002l"]
+[ext_resource type="Resource" uid="uid://csw5nfift7fsp" path="res://data/activities/drawing.tres" id="11_4am7i"]
+[ext_resource type="Texture2D" uid="uid://8o4gb7ww7coc" path="res://kenney_scribble-dungeons/PNG/Default (64px)/trap.png" id="12_dkebm"]
+[ext_resource type="Resource" uid="uid://d3c5gfqcm40po" path="res://data/activities/meditation.tres" id="12_g236u"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oqv31"]
 tile_data = PackedInt32Array(0, 131073, 0, 1, 196609, 0, 2, 196609, 0, 3, 196609, 0)
@@ -657,7 +657,7 @@ vertices = PackedVector2Array(1057, -21, 1071, 619, 97, 617, 106, -23)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(106, -23, 97, 617, 1071, 619, 1057, -21)])
 
-[node name="Node2D" type="Node2D"]
+[node name="main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(11, -905)
@@ -667,10 +667,12 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1245194, 1, 1, 1179658, 1, 1, 1114122, 1, 1, 1048586, 1, 1, 983050, 1, 1, 1245193, 1, 1, 1179657, 1, 1, 1114121, 1, 1, 1048585, 1, 1, 983049, 1, 1, 1245192, 1, 1, 1179656, 1, 1, 1114120, 1, 1, 1048584, 1, 1, 983048, 1, 1, 1245191, 1, 1, 1179655, 1, 1, 1114119, 1, 1, 1048583, 1, 1, 983047, 1, 1, 1048582, 1, 1, 983046, 589825, 196608, 917510, 589825, 327684, 917511, 655361, 196608, 917512, 655361, 196608, 1114118, 1, 1, 1179654, 1, 1, 1245190, 1, 1, 1310728, 1, 1, 1310727, 393217, 1, 1310726, 1, 1, 917513, 655361, 196608, 1310729, 1, 1, 917514, 655361, 196608, 1310730, 1, 1, 983051, 589825, 131072, 1048587, 1, 1, 917515, 589825, 131076, 1114123, 1, 1, 1179659, 1, 1, 1245195, 1, 1, 1310731, 1, 1, 1048589, 1, 1, 1048588, 1, 1, 1114124, 1, 1, 983052, 655361, 196608, 1114125, 1, 1, 983053, 655361, 196608, 1048590, 655361, 131072, 1114126, 655361, 131072, 983054, 589825, 131076, 1245198, 1, 1, 1245197, 1, 1, 1245196, 1, 1, 1310732, 1, 1, 1179660, 1, 1, 1310733, 1, 1, 1179661, 1, 1, 1179662, 589825, 131072, 1245199, 655361, 131072, 1310735, 655361, 131072, 1179663, 589825, 131076, 1572876, 196609, 196608, 1507340, 196609, 196608, 1441804, 196609, 196608, 1376268, 131073, 65536, 1572875, 1, 1, 1507339, 1, 1, 1441803, 1, 1, 1376267, 262145, 1, 1572874, 1, 1, 1507338, 1, 1, 1441802, 1, 1, 1376266, 196609, 262144, 1572873, 1, 1, 1507337, 393217, 5, 1441801, 1, 1, 1376265, 196609, 262144, 1572872, 1, 1, 1507336, 1, 1, 1441800, 1, 1, 1376264, 196609, 262144, 1572871, 196609, 65536, 1507335, 196609, 65536, 1441799, 196609, 65536, 1376263, 131073, 262144, 1376262, 1, 1, 1441798, 1, 1, 1507334, 1, 1, 1572870, 589825, 65536, 1638408, 655361, 0, 1638407, 655361, 0, 1638406, 589825, 262148, 1638409, 655361, 0, 1638410, 655361, 0, 1638411, 655361, 0, 1638412, 655361, 0, 1376269, 1, 1, 1441805, 1, 1, 1507341, 1, 1, 1572877, 1, 1, 1638413, 655361, 0, 1245189, 1, 1, 1179653, 1, 1, 1114117, 1, 1, 1245188, 1, 1, 1179652, 1, 1, 1114116, 1, 1, 1245187, 1, 1, 1179651, 1, 1, 1114115, 1, 1, 1245186, 1, 1, 1179650, 1, 1, 1114114, 1, 1, 1179649, 655361, 65536, 1114113, 655361, 65536, 1048577, 655361, 65536, 1048578, 1, 1, 1048579, 1, 1, 1245185, 655361, 65536, 1310723, 1, 1, 1310722, 1, 1, 1310721, 655361, 65536, 1048580, 1, 1, 1310724, 1, 1, 1048581, 1, 1, 1310725, 1, 1, 1507333, 1, 1, 1441797, 1, 1, 1507332, 196609, 196608, 1441796, 196609, 196608, 1507331, 196609, 6, 1441795, 1, 1, 1376259, 262145, 1, 1376260, 131073, 65536, 1376261, 1, 1, 1572869, 655361, 0, 1572868, 655361, 0, 1572867, 655361, 0, 1507342, 393217, 65539, 1441806, 393217, 65539, 1376270, 393217, 65539, 1572878, 1, 1, 1376271, 655361, 131072, 1441807, 655361, 131072, 1507343, 655361, 131072, 1572879, 655361, 131072, 1638414, 655361, 0, 1638415, 589825, 5, 983041, 589825, 327684, 983042, 655361, 196608, 983043, 655361, 196608, 983044, 655361, 196608, 983045, 655361, 196608, 1507330, 393217, 131075, 1441794, 1, 1, 1376258, 196609, 262144, 1376257, 655361, 65536, 1441793, 655361, 65536, 1507329, 655361, 65536, 1572866, 655361, 0, 1572865, 589825, 262148, 1310734, 393217, 65539)
 
 [node name="Patient" parent="." instance=ExtResource("2_c10yl")]
+patient = ExtResource("3_4f03o")
 texture = ExtResource("3_u5spm")
 
 [node name="Patient2" parent="." instance=ExtResource("2_c10yl")]
 position = Vector2(769, 290)
+patient = ExtResource("5_3fp2e")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
@@ -679,149 +681,29 @@ navigation_polygon = SubResource("NavigationPolygon_4l8mu")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(560, 430)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UIRoot" type="CanvasLayer" parent="."]
+script = ExtResource("5_u6m05")
 
-[node name="TimeContainer" parent="CanvasLayer" instance=ExtResource("3_8jibn")]
+[node name="TimeContainer" parent="UIRoot" instance=ExtResource("3_8jibn")]
 
-[node name="PatientContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_bottom = 0.891
-offset_right = 64.0
-offset_bottom = 0.631957
-grow_vertical = 2
-script = ExtResource("5_l7rnv")
+[node name="PatientContainer" parent="UIRoot" instance=ExtResource("7_k74a5")]
 
-[node name="VerticalContainer" type="VBoxContainer" parent="CanvasLayer/PatientContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-alignment = 2
-
-[node name="PatientButton" type="TextureButton" parent="CanvasLayer/PatientContainer/VerticalContainer"]
+[node name="CalendarContainer" parent="UIRoot" instance=ExtResource("9_nrke2")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
-theme = ExtResource("6_mvh7p")
-texture_normal = ExtResource("5_wmtu2")
-
-[node name="Calendar" type="Panel" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-offset_left = -0.0319996
-offset_top = 0.175999
-offset_right = 0.383926
-offset_bottom = 0.207972
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_8kar4")
-
-[node name="WeekView" type="HBoxContainer" parent="CanvasLayer/Calendar"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.137
-anchor_top = 0.1
-anchor_right = 0.958
-anchor_bottom = 0.902
-offset_left = -0.488992
-offset_top = 0.596807
-offset_right = 0.113567
-offset_bottom = -0.356853
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Calendar/WeekView"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("9_nfq2q")
-
-[node name="Button" type="Button" parent="CanvasLayer/Calendar/WeekView/VBoxContainer"]
-layout_mode = 2
-text = "hey"
-icon_alignment = 1
-
-[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/Calendar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.095
-anchor_bottom = 1.003
-offset_right = 0.408487
-offset_bottom = 0.0127475
-horizontal_scroll_mode = 0
-
-[node name="EventPicker" type="VBoxContainer" parent="CanvasLayer/Calendar/Scroll"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Calendar/Scroll/EventPicker"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
-layout_mode = 2
-size_flags_vertical = 0
-mouse_default_cursor_shape = 13
-texture = ExtResource("9_33wss")
-expand_mode = 2
-stretch_mode = 6
-script = ExtResource("11_q002l")
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Calendar/Scroll/EventPicker/TextureRect"]
-show_behind_parent = true
-layout_mode = 1
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Calendar/Scroll/EventPicker/TextureRect/Panel"]
-z_index = 1
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "event 1"
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Calendar/Scroll/EventPicker"]
-custom_minimum_size = Vector2(2.08165e-12, 200)
-layout_mode = 2
-texture = ExtResource("9_33wss")
-expand_mode = 4
-stretch_mode = 6
-script = ExtResource("11_q002l")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Calendar/Scroll/EventPicker"]
-custom_minimum_size = Vector2(2.08165e-12, 200)
-layout_mode = 2
-texture = ExtResource("9_33wss")
-expand_mode = 4
-stretch_mode = 6
-script = ExtResource("11_q002l")
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Calendar/Scroll/EventPicker"]
-custom_minimum_size = Vector2(2.08165e-12, 200)
-layout_mode = 2
-texture = ExtResource("9_33wss")
-expand_mode = 4
-stretch_mode = 6
-script = ExtResource("11_q002l")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Calendar/Scroll/EventPicker"]
-custom_minimum_size = Vector2(80, 120)
-layout_mode = 2
-texture = ExtResource("10_bbc8p")
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Calendar/Scroll/EventPicker/NinePatchRect"]
-show_behind_parent = true
-layout_mode = 0
-mouse_filter = 2
 
 [node name="activity1" parent="." instance=ExtResource("8_uhnny")]
 position = Vector2(687, 165)
+activity = ExtResource("11_4am7i")
 
 [node name="activity2" parent="." instance=ExtResource("8_uhnny")]
 position = Vector2(252, 187)
+activity = ExtResource("12_g236u")
 
 [node name="PatientManager" type="Node2D" parent="." node_paths=PackedStringArray("patients")]
 script = ExtResource("9_pq4gi")
 patients = [NodePath("../Patient"), NodePath("../Patient2")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1100.86, 312.895)
+texture = ExtResource("12_dkebm")

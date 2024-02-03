@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://pgsqqtug0tme"]
+
+[ext_resource type="Script" path="res://user_interface/calendar/calendar_container.gd" id="1_fs1st"]
+[ext_resource type="Texture2D" uid="uid://bgfn647m855hg" path="res://addons/godot_gameplay_systems/attributes_and_abilities/assets/GameplayEffect.svg" id="3_mbu22"]
+[ext_resource type="Script" path="res://user_interface/calendar/calendar_event.gd" id="4_k5kgo"]
+[ext_resource type="Texture2D" uid="uid://c2d8ar1vogsgq" path="res://addons/godot_gameplay_systems/attributes_and_abilities/assets/Ability.svg" id="5_dl2xc"]
+[ext_resource type="PackedScene" uid="uid://b1c0mowey6jh7" path="res://user_interface/calendar/calendar_day.tscn" id="5_oemd5"]
+
+[node name="Calendar" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_left = -0.0319996
+offset_top = 0.175999
+offset_right = 0.383926
+offset_bottom = 0.207972
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fs1st")
+day_container_scene = ExtResource("5_oemd5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Calendar"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/Header"]
+custom_minimum_size = Vector2(30, 2.08165e-12)
+layout_mode = 2
+text = "x"
+
+[node name="Body" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActivityList" type="ScrollContainer" parent="VBoxContainer/Body"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="EventPicker" type="VBoxContainer" parent="VBoxContainer/Body/ActivityList"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_default_cursor_shape = 13
+texture = ExtResource("3_mbu22")
+expand_mode = 2
+stretch_mode = 6
+script = ExtResource("4_k5kgo")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Body/ActivityList/EventPicker/TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Body/ActivityList/EventPicker/TextureRect/Panel"]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "event 1"
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+texture = ExtResource("3_mbu22")
+expand_mode = 4
+stretch_mode = 6
+script = ExtResource("4_k5kgo")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+texture = ExtResource("3_mbu22")
+expand_mode = 4
+stretch_mode = 6
+script = ExtResource("4_k5kgo")
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+texture = ExtResource("3_mbu22")
+expand_mode = 4
+stretch_mode = 6
+script = ExtResource("4_k5kgo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]
+custom_minimum_size = Vector2(80, 120)
+layout_mode = 2
+texture = ExtResource("5_dl2xc")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Body/ActivityList/EventPicker/NinePatchRect"]
+show_behind_parent = true
+layout_mode = 0
+mouse_filter = 2
+
+[node name="WeekView" type="HBoxContainer" parent="VBoxContainer/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/Header/CloseButton" to="." method="_on_close_button_pressed"]

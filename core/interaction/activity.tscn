@@ -13,6 +13,7 @@ script = ExtResource("1_ija53")
 shape = SubResource("RectangleShape2D_13hpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_br6gt")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

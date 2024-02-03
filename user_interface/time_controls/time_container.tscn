@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwj2m6kl8mip"]
 
-[ext_resource type="Script" path="res://user_interface/TimeLabel.gd" id="1_25db5"]
+[ext_resource type="Script" path="res://user_interface/time_controls/TimeLabel.gd" id="1_25db5"]
 
 [node name="PanelContainer" type="PanelContainer"]
 anchors_preset = 1

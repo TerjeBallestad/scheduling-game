@@ -1,15 +1,12 @@
 class_name CalendarDay extends VBoxContainer
 
 var day: DateTime.Day
-
-func _init(_day: DateTime.Day):
-	day = _day
+@onready var day_label: Label = %DayLabel
 
 func _ready():
+	print(day, DateTime.Day.find_key(day))
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var label = Label.new()
-	add_child(label)
-	label.text = DateTime.Day.find_key(day)
+	day_label.text = DateTime.Day.find_key(day)
 	for slot in 24:
 		var slotContainer = CalendarSlot.new()
 		slotContainer.datetime = TimeManager.calendar.current_week[day * 96 + slot * 4]
@@ -17,6 +14,8 @@ func _ready():
 		print("adding slot %s day: %d slot: %d" % [slotContainer.datetime.formatted, day, slot])
 		add_child(slotContainer)
 
+func setup(_day: DateTime.Day):
+	day = _day
 
 func _can_drop_data(_pos: Vector2, data: Variant) -> bool:
 	return data is Texture2D
