@@ -16,8 +16,9 @@ func set_active_patient(patient: Patient):
     patient.activate()
 
 func _unhandled_input(event: InputEvent) -> void:
-    if event.is_action_pressed("patient_navigation") && GameState.activePatient:
+    if event.is_action_pressed("patient_navigation"):
         if patient_mouseover:
             GameState.set_active_patient(patient_mouseover)
             return
-        GameState.activePatient.point_and_click_2d.set_new_movement_position(get_global_mouse_position())
+        if GameState.activePatient:
+            GameState.activePatient.point_and_click_2d.set_new_movement_position(get_global_mouse_position())

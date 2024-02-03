@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://de2cx1el6s2ht"]
+
+[ext_resource type="Script" path="res://user_interface/calendar/calendar_slot.gd" id="1_xyeut"]
+
+[node name="calendar_slot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_xyeut")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Monday 11:30"

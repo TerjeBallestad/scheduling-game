@@ -1,18 +1,16 @@
 class_name CalendarSlot extends TextureRect
 
 var datetime: DateTime
-var label: Label
-var panel: Panel
+@onready var label: Label = %Label
+@onready var panel: Panel = %Panel
 var text: String :
 	set(value) :
 		label.text = value
 
-func _init():
+func _ready():
 	expand_mode = TextureRect.EXPAND_FIT_WIDTH
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	label = Label.new()
 	add_child(label)
-	panel = Panel.new()
 	panel.show_behind_parent = true
 	panel.set_anchors_preset(Control.PRESET_FULL_RECT)
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
