@@ -45,7 +45,15 @@ var day: int :
 
 var formatted: String :
 	get:
-		return "%s %02d:%02d" % [Day.find_key(day), hour, minute]
+		return "%s %02d:%02d" % [Day.find_key(day)[0].to_upper() + Day.find_key(day).substr(1, -1), hour, minute]
+
+var formatted_time: String :
+	get:
+		return "%02d:%02d" % [hour, minute]
+
+var formatted_day:
+	get:
+		return Day.find_key(day)[0].to_upper() + Day.find_key(day).substr(1, -1)
 
 func _init(_time: float = -1):
 	seconds_second = 60 / game_time_factor

@@ -1,35 +1,25 @@
 class_name CalendarSlot extends TextureRect
 
-var datetime: DateTime
+var datetime: DateTime = DateTime.new(0)
 @onready var label: Label = %Label
 @onready var panel: Panel = %Panel
 var text: String :
 	set(value) :
 		label.text = value
 
-func _ready():
-	expand_mode = TextureRect.EXPAND_FIT_WIDTH
-	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	add_child(label)
-	panel.show_behind_parent = true
-	panel.set_anchors_preset(Control.PRESET_FULL_RECT)
-	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(panel)
-	custom_minimum_size.y = 28
+func set_date(_datetime: DateTime):
+	datetime = _datetime
+	text = datetime.formatted_time
 
 func _get_drag_data(_at_position: Vector2):
 	var preview_texture = TextureRect.new()
-
 	preview_texture.texture = texture
 	preview_texture.expand_mode = 1
 	preview_texture.size = Vector2(30,30)
-
 	var preview = Control.new()
 	preview.add_child(preview_texture)
-
 	set_drag_preview(preview)
 	texture = null
-
 	return preview_texture.texture
 
 

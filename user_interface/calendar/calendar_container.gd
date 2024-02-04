@@ -4,7 +4,6 @@ class_name CalendarContainer extends PanelContainer
 @onready var weekContainer: HBoxContainer = %WeekView
 @onready var activityPicker: VBoxContainer = %EventPicker
 var activityButtons: Array[Button] = []
-var dayContainers: Array[CalendarDay] = []
 
 func _ready():
 	GameState.activityAdded.connect(_add_activity_button)
@@ -26,11 +25,8 @@ func _add_activity_button(activity: Interactable):
 
 func init_week() -> void :
 	for day in 7 :
-		var dayContainer = day_container_scene.instantiate()
-		print(dayContainer.has_node('DayLabel'))
+		var dayContainer = weekContainer.get_child(day)
 		dayContainer.setup(day)
-		dayContainers.push_front(dayContainer)
-		weekContainer.add_child(dayContainer)
 
 func _on_close_button_pressed():
 	hide()

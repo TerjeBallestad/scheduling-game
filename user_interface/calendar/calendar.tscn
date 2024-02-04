@@ -115,4 +115,25 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="CalendarDay1" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay2" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay3" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay4" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay5" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay6" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
+[node name="CalendarDay7" parent="VBoxContainer/Body/WeekView" instance=ExtResource("5_oemd5")]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/Header/CloseButton" to="." method="_on_close_button_pressed"]
