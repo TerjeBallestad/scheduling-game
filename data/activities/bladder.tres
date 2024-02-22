@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ActivityResource" load_steps=3 format=3 uid="uid://24a5f551ll8m"]
+
+[ext_resource type="Script" path="res://data/01_models/activity_resource.gd" id="1_0jq8s"]
+[ext_resource type="Texture2D" uid="uid://bq0n8dud4ahp8" path="res://kenney_scribble-dungeons/PNG/Default (64px)/wall_secret.png" id="2_g6nef"]
+
+[resource]
+script = ExtResource("1_0jq8s")
+texture = ExtResource("2_g6nef")
+name = "Toilet"

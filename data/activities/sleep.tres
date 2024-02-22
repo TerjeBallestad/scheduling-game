@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ActivityResource" load_steps=3 format=3 uid="uid://dr3tf48278qn4"]
+
+[ext_resource type="Script" path="res://data/01_models/activity_resource.gd" id="1_8xh81"]
+[ext_resource type="Texture2D" uid="uid://cav5wn4eihsfb" path="res://kenney_scribble-dungeons/PNG/Default (64px)/bed_luxurious.png" id="2_s061g"]
+
+[resource]
+script = ExtResource("1_8xh81")
+texture = ExtResource("2_s061g")
+name = "Sleep"

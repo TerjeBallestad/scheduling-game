@@ -5,6 +5,7 @@ class_name Patient extends CharacterBody2D
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var point_and_click_2d: PointAndClick2D = %PointAndClick2D
 @export var outline_material: Material
+@export var energy: Dictionary
 
 var interactable: Interactable
 var patientManager: PatientManager
@@ -13,6 +14,11 @@ var active := false
 
 func _ready():
 	sprite.texture = patient.texture
+	energy = {
+		will = 43,
+		creative = 12,
+		physical = 5,
+	}
 
 func move_to_interactable(_interactable: Interactable) -> void:
 	hasInteracted = false

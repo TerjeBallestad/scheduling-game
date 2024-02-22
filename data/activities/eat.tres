@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ActivityResource" load_steps=3 format=3 uid="uid://bvfuno76elmjd"]
+
+[ext_resource type="Script" path="res://data/01_models/activity_resource.gd" id="1_ihiag"]
+[ext_resource type="Texture2D" uid="uid://d2a7iv6dl112m" path="res://kenney_scribble-dungeons/PNG/Default (64px)/table.png" id="2_0u5v8"]
+
+[resource]
+script = ExtResource("1_ihiag")
+texture = ExtResource("2_0u5v8")
+name = "Eat"

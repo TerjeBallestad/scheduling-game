@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ActivityResource" load_steps=3 format=3 uid="uid://d3c5gfqcm40po"]
 
 [ext_resource type="Script" path="res://data/01_models/activity_resource.gd" id="1_2h5m5"]
-[ext_resource type="Texture2D" uid="uid://c8n6mbespuumo" path="res://kenney_scribble-dungeons/PNG/Default (64px)/cart.png" id="2_jegwj"]
+[ext_resource type="Texture2D" uid="uid://sok4vwfrpse5" path="res://kenney_scribble-dungeons/PNG/Default (64px)/carpet.png" id="2_ghtnk"]
 
 [resource]
 script = ExtResource("1_2h5m5")
-texture = ExtResource("2_jegwj")
+texture = ExtResource("2_ghtnk")
 name = "Meditation"
