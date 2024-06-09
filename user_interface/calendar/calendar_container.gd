@@ -4,6 +4,7 @@ class_name CalendarContainer extends PanelContainer
 @onready var weekContainer: HBoxContainer = %WeekView
 @onready var activityPicker: VBoxContainer = %EventPicker
 var activityButtons: Array[Button] = []
+var isOpen := false
 
 func _ready():
 	GameState.activityAdded.connect(_add_activity_button)
@@ -29,8 +30,12 @@ func init_week() -> void :
 		dayContainer.setup(day)
 
 func _on_close_button_pressed():
-	hide()
+	toggle(false)
 
-func open():
-	show()
-	init_week()
+func toggle(newOpen = !isOpen):
+	if(newOpen):
+		show()
+		init_week()
+	else:
+		hide()
+	isOpen = newOpen

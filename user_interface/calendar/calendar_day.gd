@@ -11,7 +11,7 @@ func setup(_day: DateTime.Day):
 	for slot in slot_count:
 		var slotContainer = get_child(slot + 1)
 		slotContainer.set_date(TimeManager.calendar.current_week[day * 96 + slot * 4])
-		print("adding slot %s day: %d slot: %d" % [slotContainer.datetime.formatted, day, slot])
+		# print("adding slot %s day: %d slot: %d" % [slotContainer.datetime.formatted, day, slot])
 
 func _can_drop_data(_pos: Vector2, data: Variant) -> bool:
 	return data is Texture2D

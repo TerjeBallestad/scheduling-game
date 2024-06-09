@@ -5,4 +5,4 @@ class_name UIRoot extends CanvasLayer
 func _unhandled_input(event):
     if event.is_action_released("calendar"):
         print(event)
-        calendar.open()
+        calendar.toggle()
