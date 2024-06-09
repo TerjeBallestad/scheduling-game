@@ -1,13 +1,14 @@
 class_name CalendarContainer extends PanelContainer
 
 @export var day_container_scene: PackedScene
+@export var isOpen := false
 @onready var weekContainer: HBoxContainer = %WeekView
 @onready var activityPicker: VBoxContainer = %EventPicker
 var activityButtons: Array[Button] = []
-var isOpen := false
 
 func _ready():
 	GameState.activityAdded.connect(_add_activity_button)
+	toggle(isOpen)
 
 func schedule_activity(activity: Interactable):
 	var date = DateTime.new().countdown(3)

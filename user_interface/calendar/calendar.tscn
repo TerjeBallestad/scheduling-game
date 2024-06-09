@@ -68,8 +68,10 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="VBoxContainer/Body/ActivityList/EventPicker/TextureRect/Panel"]
 z_index = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 0.0319977
+offset_top = -0.175995
+offset_right = 57.032
+offset_bottom = 25.824
 text = "event 1"
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Body/ActivityList/EventPicker"]

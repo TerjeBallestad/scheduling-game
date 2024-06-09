@@ -713,7 +713,11 @@ script = ExtResource("5_u6m05")
 
 [node name="CalendarContainer" parent="UIRoot" instance=ExtResource("9_nrke2")]
 unique_name_in_owner = true
-visible = false
+offset_left = -0.999988
+offset_top = -9.23872e-06
+offset_right = -0.584061
+offset_bottom = 0.0319471
+isOpen = true
 
 [node name="activity1" parent="." instance=ExtResource("8_uhnny")]
 position = Vector2(687, 165)

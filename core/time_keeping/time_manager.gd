@@ -18,9 +18,10 @@ func _ready():
 	calendar = Calendar.new()
 	Engine.time_scale = 1
 	print("original time = %s %f" % [datetime.formatted, time])
-	target_timestamp = DateTime.new().target_date(DateTime.Day.saturday, 2, 59)
+	target_timestamp = DateTime.new().target_date(DateTime.Day.thursday, 11, 59)
 	target_timestamp.date_target_reached.connect(_on_timestamp_target_reaced)
 	add_alarm(target_timestamp)
+	print("target timestamp %f" % [target_timestamp.time])
 	print(target_timestamp.formatted)
 
 func _process(delta):
@@ -32,6 +33,7 @@ func _process(delta):
 		previousTimeFormatted = timeFormatted
 	for alarm in alarms:
 		if alarm.time <= datetime.time:
+			print("timestamp %f" % [datetime.time])
 			alarm.date_target_reached.emit()
 			alarms.erase(alarm)
 			alarm.queue_free()

@@ -13,7 +13,7 @@ enum Day {
 signal date_target_reached()
 
 var game_time_factor: float = 60000
-var time := 0.0
+var time := 0.0 # time in real seconds
 var seconds_second: float # seconds in an in-game second
 var seconds_minute: float # seconds in an in-game minute
 var seconds_hour: float # seconds in an in-game hour
@@ -75,6 +75,8 @@ func target_date(_day: Day, _hour: float, _minute: float):
 	time += daysToAdd * seconds_day
 	time += (_hour - hour) * seconds_hour
 	time += (_minute - minute) * seconds_minute
+
+	print("days: %f, hours: %f, minutes: %f" % [daysToAdd, _hour - hour, _minute - minute])
 	update(time)
 	TimeManager.add_alarm(self)
 	return self
@@ -94,6 +96,6 @@ func add_hours(_hours: float):
 	update(time)
 
 func add_minutes(_minutes: float):
-	print(_minutes, seconds_minute)
+	# print(_minutes, seconds_minute)
 	time += _minutes * seconds_minute
 	update(time)

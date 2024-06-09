@@ -12,6 +12,7 @@ offset_bottom = -0.0800006
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 0
 expand_mode = 2
 stretch_mode = 6
@@ -42,3 +43,7 @@ grow_vertical = 2
 text = "Monday 11:30"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 176, 2.08165e-12)
+width = 2.0

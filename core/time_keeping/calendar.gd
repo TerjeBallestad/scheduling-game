@@ -16,7 +16,8 @@ func _init():
 		slot_added.emit(date)
 		# print("new date: %s %f" % [date.formatted(), date.time])
 		if fmod(date.minute, 15) != 0:
-			print("wrong time: %f" % date.time)
+			# print("wrong time: %f" % date.time)
+			pass
 
 	print("init current week %d" % current_week_number)
 

@@ -10,8 +10,8 @@ bg_color = Color(0.807843, 0.0901961, 0.239216, 1)
 anchors_preset = -1
 anchor_right = 0.092
 anchor_bottom = 0.519
-offset_right = -0.640015
-offset_bottom = 0.399988
+offset_right = -0.64
+offset_bottom = 239.48
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_qnogq")
@@ -19,6 +19,7 @@ slot_scene = ExtResource("2_ey7yg")
 
 [node name="DayLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_2j3na")
 text = "monday"
@@ -95,3 +96,13 @@ layout_mode = 2
 
 [node name="calendar_slot24" parent="." instance=ExtResource("2_ey7yg")]
 layout_mode = 2
+
+[node name="Line" type="Line2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 63)
+points = PackedVector2Array(0, 0, 175.86, 2.08165e-12)
+width = 5.0
+default_color = Color(0.27451, 0.486275, 0.313726, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
